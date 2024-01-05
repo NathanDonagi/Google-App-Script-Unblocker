@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+   <body style = "margin: 0; padding: 0; background: #7b3d82; color: #fff; font-family: Roboto; font-weight: 400; text-align: center;">
+       <div class="wrapper" style ="width: 100%;
+       padding: 50px;
+       position: absolute;
+       display: flex;
+       flex: 1;
+       align-items: center;
+       flex-direction: column;
+       justify-content: center;">
+           <div class="container" style = "width: 900px;
+           background: #693567;
+           padding: 25px;
+           margin: 5px 0px;
+           text-align: left;
+           display: block;
+           border: solid 1px rgb(255, 255, 255, 0.2);">
+               <div class="form">
+                   <input id="url" style = "width: 90%;
+                   height: 50px;
+                   left: 0;
+                   color: #fff;
+                   padding: 0px 5px;
+                   background: none;
+                   font-size: 14px;
+                   border-radius: 2px;
+                   border: solid 1px rgb(255, 255, 255, 0.2);">
+                   <button id="initiate" style = "width: 60px;
+                   height: 50px;
+                   color: #fff;
+                   padding: 0px 5px;
+                   font-size: 14px;
+                   background: none;
+                   border-radius: 2px;
+                   border: solid 1px rgb(255, 255, 255, 0.2);">Search</button>
+               </div>
+           </div>
+       </div>
+       <script>
+         var site_url = "https://script.google.com/a/macros/students.lmsd.org/s/AKfycbzxti3jpD9fbBjrGJ47SO-Ka3-LpXEz1NRcjgIvq83F/dev"
+         var input = document.querySelector('#url');
+
+
+         input.addEventListener('keyup', (key) => {
+             if (key.keyCode == 13) {
+                 if (!input.value.trim().length) return;
+                 window.top.location.replace(`${site_url}/web/${btoa(input.value)}`);
+             }
+         });
+
+
+
+
+         document.querySelector("#initiate").addEventListener('click', () => {
+
+
+             if (!input.value.trim().length) return;
+             window.top.location.replace(`${site_url}/web/${btoa(input.value)}`);
+
+
+         });
+       </script>
+   </body>
+</html>
